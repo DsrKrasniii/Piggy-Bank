@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Venmo-like Interface</title>
+    <title>Piggy Bank</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -47,7 +47,7 @@
 
   <body>
     <header>
-      <h1>Venmo-like Interface</h1>
+      <h1>Piggy Bankin</h1>
     </header>
 
     <div class="container">
@@ -61,9 +61,10 @@
         <input type="text" id="item" placeholder="Item" />
         <input type="number" id="amount" placeholder="Amount" />
         <button onclick="addTransaction()">Add</button>
+        <button onclick="subtractTransaction()">Subtract</button>
 
         <h2>Account Balance</h2>
-        <p id="account-balance">$1000.00</p>
+        <p id="account-balance">$100.00</p>
       </div>
     </div>
 
@@ -75,7 +76,7 @@
         if (item && !isNaN(amount)) {
           const transactionList = document.getElementById("transaction-list");
           const listItem = document.createElement("li");
-          listItem.innerHTML = "${item}: $${amount.toFixed(2)}";
+          listItem.innerHTML = `${item}: $${amount.toFixed(2)}`;
           transactionList.appendChild(listItem);
 
           const accountBalance = parseFloat(
@@ -83,7 +84,28 @@
           );
           const newBalance = accountBalance + amount;
           document.getElementById("account-balance").innerText =
-            "$${newBalance.toFixed(2)";
+            `$${newBalance.toFixed(2)}`;
+
+          document.getElementById("item").value = "";
+          document.getElementById("amount").value = "";
+        }
+      }
+      function subtractTransaction() {
+        const item = document.getElementById("item").value;
+        const amount = parseFloat(document.getElementById("amount").value);
+
+        if (item && !isNaN(amount)) {
+          const transactionList = document.getElementById("transaction-list");
+          const listItem = document.createElement("li");
+          listItem.innerHTML = `${item}: -$${amount.toFixed(2)}`;
+          transactionList.appendChild(listItem);
+
+          const accountBalance = parseFloat(
+            document.getElementById("account-balance").innerText.slice(1)
+          );
+          const newBalance = accountBalance - amount;
+          document.getElementById("account-balance").innerText =
+            `$${newBalance.toFixed(2)}`;
 
           document.getElementById("item").value = "";
           document.getElementById("amount").value = "";
