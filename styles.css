@@ -1,0 +1,106 @@
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16pt;
+}
+
+header {
+    background-color: #0070ba;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 20px;
+}
+
+.card {
+    max-width: 400px;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    box-shadow: 0 0 10px #00000033;
+    margin: 10px;
+}
+
+input {
+    margin: 8px;
+    min-height: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 2%;
+    border: none;
+    color: #ffffff;
+    border-radius: 3px;
+    margin: 10px;
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+
+#deposit-btn {
+    background-color: #126d00;
+}
+
+#deposit-btn:hover {
+    background-color: #0b4000;
+}
+
+#withdraw-btn {
+    background-color: #c40300;
+}
+
+#withdraw-btn:hover {
+    background-color: #690200;
+}
+
+.btn:hover {
+    transition: all 200ms ease-in-out;
+}
+
+#ledger-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#ledger-table td, #ledger-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#ledger-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#ledger-table tr:hover {
+    background-color: #dddddd;
+}
+
+#ledger-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
