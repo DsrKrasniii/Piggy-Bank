@@ -12,12 +12,18 @@
     <div class="container">
       <div class="card">
         <h2>Current Balance</h2>
-        <p id="current-balance">$100.00</p>
+        <p>
+          $<input id="account-balance" type="number" step="0.01" value="100.00" />
+        </p>
+      </div>
+      <div id="chart-container">
+        <canvas id="chart"></canvas>
       </div>
       <div class="card">
         <h2>New Transaction</h2>
         <input type="text" id="item" placeholder="Item" />
-        <input type="number" id="amount" placeholder="Amount" />
+        <br>
+        $<input type="number" id="amount" placeholder="Amount" />
         <div>
         <button id="deposit-btn" class="btn" onclick="addTransaction(1)">
           Deposit <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><style>svg{fill:#ffffff}</style><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
@@ -35,8 +41,10 @@
           <th>Amount</th>
           <th>Date</th>
         </thead>
+        <tbody id="ledger-body"></tbody>
       </table>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="pbApp.js"></script>
   </body>
 </html>

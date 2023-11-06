@@ -104,3 +104,23 @@ li {
     background-color: #04AA6D;
     color: white;
 }
+
+#chart-container {
+    position: absolute;
+    top: 670px;
+    left: 170px;
+    right: 550px;
+}
+
+input {
+    font-size: 14pt;
+    border: 1px solid #9c9c9c66;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
